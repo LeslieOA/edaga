@@ -14,13 +14,11 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <All />,
-      children: [
-        {
-          path: "replies/:originalTxId",
-          element: <Replies />,
-        },
-      ],
     },
+      {
+        path: "replies/:originalTxId",
+        element: <Replies />,
+      },
     {
       path: "topics/",
       element: <Topics />,
