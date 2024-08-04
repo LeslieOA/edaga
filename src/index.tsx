@@ -22,12 +22,9 @@ const router = createBrowserRouter(
       element: <Replies />,
     },
     {
-      path: "topics",
+      path: "topics/",
+      element: <Topics />,
       children: [
-        {
-          path: "",
-          element: <Topics />,
-        },
         {
           path: ":topic",
           element: <Topic />,
@@ -36,7 +33,6 @@ const router = createBrowserRouter(
     },
   ],
   {
-    // Note: not confirmed, but we _may_ be able to remove (GH pages)
     basename: BASE_PATH,
   }
 );

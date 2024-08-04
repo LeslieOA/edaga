@@ -4,8 +4,7 @@ import All from "@/components/views/All";
 import Topic from "@/components/views/Topic";
 import Replies from "@/components/views/Replies";
 
-export const BASE_PATH = "/edaga";
-// export const BASE_PATH = "";
+export const BASE_PATH = "";
 
 function App() {
   return (
@@ -14,7 +13,8 @@ function App() {
       <Routes>
         <Route index element={<All />} />
         <Route path="replies/:originalTxId" element={<Replies />} />
-        <Route path="topic/:topic" element={<Topic />} />
+        <Route path="topic/" element={<Topic />} />
+        {/* <Route path="topic/:topic" element={<Topic />} /> */}
       </Routes>
     </BrowserRouter>
   );
