@@ -4,8 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "@/style/global.css";
 
-import { BASE_PATH } from "./App";
-
 import Replies from "@/components/views/Replies";
 import Topic from "@/components/views/Topic";
 import All from "@/components/views/All";
@@ -16,10 +14,12 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <All />,
-    },
-    {
-      path: "replies/:originalTxId",
-      element: <Replies />,
+      children: [
+        {
+          path: "replies/:originalTxId",
+          element: <Replies />,
+        },
+      ],
     },
     {
       path: "topics/",
@@ -33,7 +33,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: BASE_PATH,
+    basename: "",
   }
 );
 
